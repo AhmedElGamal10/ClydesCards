@@ -18,15 +18,23 @@ import java.util.List;
 public class MainController {
 
     int requestsCounter = 0;
-
+    int transactionsRequestsCounter = 0;
     @RequestMapping(value = "/transactions")
     public ResponseEntity<List<Transaction>> getUserTransactions() {
-        Transaction transaction1 = new Transaction("transaction_1", "1 Dec 2019", "AUTHORIZED", 50);
-        Transaction transaction2 = new Transaction("transaction_1", "1 Dec 2019", "SETTLED", 50);
+        Transaction transaction1;
+        Transaction transaction2;
+        if(transactionsRequestsCounter%2 == 0){
+            transaction1 = new Transaction("transaction_1", "2019-12-28", "AUTHORIZED", 50.0);
+            transaction2 = new Transaction("transaction_2", "2019-12-28", "SETTLED", 50.0);
+        } else {
+            transaction1 = new Transaction("transaction_1", "2019-12-28", "AUTHORIZED", 70.0);
+            transaction2 = new Transaction("transaction_2", "2019-12-28", "SETTLED", 80.0);
+        }
 
         List<Transaction> transactionsList = new ArrayList<>();
         transactionsList.add(transaction1);
         transactionsList.add(transaction2);
+        transactionsRequestsCounter++;
         log.info("Requests received: " + requestsCounter++);
         return new ResponseEntity<List<Transaction>>(transactionsList, HttpStatus.OK);
     }
@@ -34,11 +42,8 @@ public class MainController {
     @RequestMapping(value = "/users")
     public ResponseEntity<List<User>> getUsers() {
         User user1 = new User("user_1", "1 Jan 2019");
-        User user2 = new User("user_2", "1 Feb 2019");
-
         List<User> usersList = new ArrayList<>();
         usersList.add(user1);
-        usersList.add(user2);
 
         log.info("Requests received: " + requestsCounter++);
         return new ResponseEntity<List<User>>(usersList, HttpStatus.OK);

@@ -8,13 +8,8 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 public class Transaction {
-
-    public enum State {
-        AUTHORIZED, SETTLED
-    }
-
-    String id;
-    String date;
-    String state;
-    double amount;
+    private String id;
+    private String created;
+    private String state;
+    private Double amount;
 }
