@@ -1,5 +1,9 @@
 package com.example.clydescards.clydescards.service;
 
-public interface UserService {
+import com.example.clydescards.clydescards.model.User;
 
+import java.util.List;
+
+public interface UserService {
+    List<User> getSystemUsers();
 }
