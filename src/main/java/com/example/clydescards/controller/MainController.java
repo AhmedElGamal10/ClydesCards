@@ -1,9 +1,9 @@
-package com.example.clydescards.clydescards.controller;
+package com.example.clydescards.controller;
 
-import com.example.clydescards.clydescards.model.Transaction;
-import com.example.clydescards.clydescards.model.User;
-import com.example.clydescards.clydescards.service.TransactionService;
-import com.example.clydescards.clydescards.service.UserService;
+import com.example.clydescards.model.Transaction;
+import com.example.clydescards.model.User;
+import com.example.clydescards.service.TransactionService;
+import com.example.clydescards.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

@@ -1,6 +1,6 @@
-package com.example.clydescards.clydescards.service;
+package com.example.clydescards.service;
 
-import com.example.clydescards.clydescards.model.User;
+import com.example.clydescards.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;

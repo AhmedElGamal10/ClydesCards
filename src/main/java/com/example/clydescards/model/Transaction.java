@@ -1,4 +1,4 @@
-package com.example.clydescards.clydescards.model;
+package com.example.clydescards.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
